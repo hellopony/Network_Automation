@@ -72,17 +72,22 @@ if __name__ == "__main__":
 
     # 定义交换机信息（只需指定 IP）
     switches = [
-        {"host": "ncnex072"},  # 替换为你的交换机 IP
-      #  {"host": "ncnex041"},
-      #  {"host": "ncnex042"},
+        {"host": ""},  # 替换为你的交换机 IP
+        {"host": ""},
+        {"host": ""},
+        {"host": ""},
     ]
 
     # 要执行的命令列表
     commands = [
     #    "show ip int br",  # 显示接口信息
     #    "conf t",          # 进入全局配置模式
+
+        "no aaa group server radius group-name",
+        "aaa group server radius group-name",
+        "server name XXXX",
         "wr me",
-        "show run | se ISE",
+        "show run | se ise_server_name",
 
     ]
 
